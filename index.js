@@ -5,3 +5,21 @@ const questions = [
 ]
 
 let question;
+
+function appendQuestion(question){
+  document.getElementById('qc').innerHTML=question.questionText; 
+}
+
+function askQuestionThen(time){
+  question = questions[0];
+  appendQuestion(question);
+  return new Promise((resolve,reject)=>{setTimeout(function(){answer = document.getElementById('qc'); resolve(answer)},time)})
+}
+
+function removeQuestion(){
+  document.getElementById('qc').innerHTML=''
+}
+
+function askQuestionThenRemoveQuestion(time){
+ 
+}
